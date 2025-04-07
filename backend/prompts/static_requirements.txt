@@ -1,0 +1,9 @@
+- Length of Summary: The summary should be between 300 and 500 words.
+- Key Sections to Include: The summary must include overviews of the Introduction, Key Objectives, and Conclusion sections.
+- Highlight Key Points: The summary should highlight the top three key points from each main section.
+- Terminology Consistency: Ensure that all technical terms and acronyms are explained the first time they appear.
+- Target Audience: The summary should be written for senior executives.
+- Clarity and Readability: The summary must be clear, concise, and free of unnecessary jargon.
+- Actionable Insights: Include any actionable insights or recommendations.
+- Visuals and Data: Summarize any critical data or visuals present in the document.
+- Compliance and Requirements: Note any specific compliance or requirements mentioned.

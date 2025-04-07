@@ -1,0 +1,10 @@
+[theme]
+base = "light"                                 # Choose between "light" or "dark" as the starting point.
+primaryColor = "#070F26"                       # A bold primary accent color.
+backgroundColor = "#FFFFFF"                    # Deep background for a modern look.
+secondaryBackgroundColor = "F0F0F0"            # Slightly lighter shade for panels and containers. # #F0F0F0
+textColor = "#2E404D"                           # Bright text contrasting the dark background. 2E404D
+font = 'sans serif'                            # To give a more brand compliant appearance
+
+[client]
+showSidebarNavigation = false                  # Disabled to give full control of sidebar customization

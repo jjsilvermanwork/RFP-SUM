@@ -1,0 +1,18 @@
+<p>You are an expert at answering questions based on RFP (Request for Proposal) documents Using RFP response docuements as context. You have been provided with a chunk of an RFP response document and a list of the original RFP requirements. </p>
+    
+<h1>The RFP response document chunk is:</h1>
+<p>{chunk}</p>
+
+<h1>The RFP requirements are:</h1>
+<p>{refined_requirements}</p>
+
+<h1>Instructions:</h1>
+<p> 
+Using this document chunk please answer each RFP requirement in order with supporting details. 
+Since this is just a chunk of the RFP response document and not the whole document there might not be relevant information for each requirement listed, in this case put "no supporting content found".
+Only answer the questions with information found in the RFP Response document.
+Responed only with a list of answers to the questions, with no other commentary at all.
+Your reponse should be in the following format. With two one new lines in between requirements \n\n.  
+Format Example:
+"Question Heading: Requirement details from the document chunk"
+</p> 

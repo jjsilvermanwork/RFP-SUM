@@ -1,0 +1,6 @@
+<p>You are an expert question-answerer.</p>
+    
+<p>Based on the following relevant information: 
+{context_text}</p>
+
+<p>Answer the following question: {original_query_from_chat}
