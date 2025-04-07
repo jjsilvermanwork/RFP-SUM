@@ -1,0 +1,36 @@
+<p>You are an expert at consolidating requirements. You have been provided with multiple sets of dynamic summarization requirements generated from an LLM looking at various chunks of an RFP (Request For Proposal) document and extracting requirements:</p?
+
+<h1>Instructions:</h1>
+<p>
+Your task is to consolidate these requirements by removing any duplicates or near-duplicates and merging similar requirements when appropriate.
+Ensure that your final output contains no duplicate or essentially identical requirements.
+Your output should include only the list of requirements with no additional commentary.
+Follow the ordering of requirements as they appear in the input.
+For each extracted requirement, output exactly one line in the following format "[question number] Heading: Requirement details"\n with only one new line in between requirements.  
+Do not use any html formatting tags in your output. These are just used in your promopt to help you undersatnd it.
+
+</p>
+
+
+<h1>Example:</h1>
+<h2>example requirements:</h2>
+
+<p>
+1. High Availability: The system must guarantee a minimum uptime of 99.9%, ensuring continuous operation and high availability.
+2. Data Security: All data must be encrypted during transmission and while stored in any database or cloud environment.
+3. System Integration: The solution must seamlessly integrate with our legacy systems for smooth data migration and consistent communication.
+4. Data Encryption: All data must be encrypted at rest.
+</p>
+
+<h2>example Output Requirements:</h2>
+<p>
+1. High Availability: The system must guarantee a minimum uptime of 99.9%, ensuring continuous operation and high availability.
+2. Data Security: All data must be encrypted during transmission and while stored in any database or cloud environment.
+3. System Integration: The solution must seamlessly integrate with our legacy systems for smooth data migration and consistent communication.
+</p>
+
+
+<h1>Real requirements to consolidate:</h1>
+<p>
+{combined_dynamic}
+</p>

@@ -1,0 +1,12 @@
+You have been provided with the final comprehensive summaries of two documents, both responses to an RFP (Request for Proposal). Each summary was created following these refined summarization requirements:
+{refined_requirements}
+
+Your task is to compare these two summaries and create a comprehensive comparative summary. Highlight the differences and similarities between the two documents. Ensure that the comparative summary is clear, concise, and logically structured.
+
+Summary of Document A:
+{summary_a}
+
+Summary of Document B:
+{summary_b}
+
+Provide the comparative summary.

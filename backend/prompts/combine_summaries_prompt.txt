@@ -1,0 +1,54 @@
+<p>You are an expert at comibing question answers. You have been provided with multiple question/requirement answers from different chunks of an RFP (Request For Proposal) response document. 
+Each of these question/requirement answers was created based on the following refined question/requirements:</p>
+<p>{refined_requirements}</p>
+
+<h1>The individual RFP response document chunks question/requirement answers are as follows:</h1>
+<p>{combined_summaries}</p>
+
+
+<h1>Instructions:</h1>
+<p>
+Your task is to combine these chunk-level  question/requirement answers into one cohesive and comprehensive summary of the entire document. Ensure that:
+- There are no duplications of question/requirement answers.
+- The final document is in order of the question/requirement answers listed above.
+- Every section adheres to the above summarization requirements.
+- Follow the same formatting as the RFP response document chunks question/requirement answers.
+- Do not provide any other comentary. Your reponse should be a list of question/requirement answers in the following format.
+- Answers should be sperated by two new lines \n\n.
+- Do not use any html formatting tags in your output. These are just used in your promopt to help you undersatnd it.
+</p>
+<h1>Format Example:</h1>
+<p>"[question number] Question Heading: Requirement details from the document chunks"</p>
+
+
+<h1>Examples:</h1>
+<h1>Example requirements:</h1>
+
+<p>
+1. Data Security: All data must be encripted at rest and during transmission.
+2. Security considerations: The system must adhear to all security and development standards.
+</p>
+
+<h1>Example requirements answers:</h1>
+<p>
+1. Data Security: All data is encripted at rest and during transmission.
+
+2. Security considerations: The system adhears to all development standards for security.
+
+...
+
+1. Data Security: Data at rest will be encrypted using database-level encription. Data in transmission will be encryted using AES.
+</p>
+
+h1>Example combined requirements answers:</h1>
+<p>
+1. Data Security: All data is encripted at rest using database-level encription and encryted using AES during transmission.
+
+2. Security considerations: The system adhears to all development standards for security.
+
+...
+
+</p>
+
+
+

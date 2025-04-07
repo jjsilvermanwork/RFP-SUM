@@ -1,0 +1,135 @@
+STATE OF EVERGREEN
+REQUEST FOR PROPOSAL (RFP)
+Project Title: Cloud Migration and Legacy Code Uplift for Social Services Software
+
+1. INTRODUCTION
+The State of Evergreen is issuing this Request for Proposal (RFP) to solicit qualified proposals from experienced vendors to modernize our legacy social services software. This RFP specifically addresses the migration of our existing on-premise system into a cloud-based architecture and the uplift (refactoring and modernization) of the legacy code that underpins the system. Our goal is to enhance system performance, security, scalability, and maintainability, while reducing ongoing operational costs and ensuring compliance with modern standards.
+
+2. BACKGROUND
+For over 15 years, the State of Evergreen has relied on an aging social services platform to deliver critical benefits and services to our citizens. The current system is built on outdated technology and suffers from numerous challenges, including slow response times, security vulnerabilities, and high maintenance expenses. In light of evolving technology standards and increasing service demands, the State is committed to modernizing its IT infrastructure. This project represents a strategic initiative to move the legacy system to a secure, scalable cloud environment and to modernize the underlying codebase to support future innovations.
+
+3. SCOPE OF WORK
+The selected vendor will be responsible for the following tasks:
+
+Assessment and Planning:
+
+Conduct a comprehensive review of the current legacy system, including technical architecture, performance metrics, and security posture.
+Develop a detailed migration and modernization plan, including a gap analysis between current capabilities and future requirements.
+Cloud Migration:
+
+Design and implement a cloud-based architecture that adheres to state security and compliance standards.
+Provision cloud resources, configure networking (including load balancing and high availability), and set up disaster recovery measures.
+Legacy Code Uplift:
+
+Analyze and refactor the existing legacy code. The new codebase must be modular, maintainable, and optimized for cloud deployment.
+Adopt modern development practices including automated testing, CI/CD pipelines, and containerization (e.g., Docker, Kubernetes).
+Data Migration:
+
+Securely migrate all existing data to the new cloud environment ensuring data integrity, confidentiality, and minimal downtime.
+System Integration:
+
+Integrate the modernized system with existing state systems, including identity management, financial systems, and external service interfaces.
+Develop robust APIs for seamless data exchange and interoperability with third-party applications.
+Testing and Quality Assurance:
+
+Develop a comprehensive testing strategy covering functional, performance, and security aspects.
+Conduct rigorous quality assurance to ensure the new system meets all defined requirements and performance benchmarks.
+Training and Support:
+
+Provide detailed documentation and training for state IT personnel and end-users.
+Offer post-deployment support, including ongoing system maintenance and periodic updates.
+4. TECHNICAL REQUIREMENTS
+Proposals must address the following technical requirements:
+
+Cloud Platform:
+
+The solution must be hosted on a reputable cloud provider (e.g., AWS, Microsoft Azure, or Google Cloud Platform) and comply with state and federal security guidelines.
+Security:
+
+Data must be encrypted both in transit and at rest.
+Implement robust access controls, including multi-factor authentication and regular security audits.
+Ensure compliance with relevant standards such as NIST, HIPAA (if applicable), and other data privacy regulations.
+Performance and Scalability:
+
+The system should demonstrate at least a 30% improvement in performance benchmarks compared to the legacy system.
+The architecture must be scalable to support fluctuating user loads and future growth.
+Modernization Practices:
+
+Utilize contemporary development methodologies, including agile practices, continuous integration/continuous deployment (CI/CD), and automated testing frameworks.
+The solution should be containerized (e.g., Docker) and orchestrated using platforms like Kubernetes.
+Documentation:
+
+Comprehensive documentation of the new system architecture, codebase, data migration process, and user training materials is required.
+5. FUNCTIONAL REQUIREMENTS
+In addition to the technical requirements, proposals should address the following functional aspects:
+
+User Interface:
+The modernized system should feature an intuitive, user-friendly interface that improves accessibility for both administrators and citizens.
+Data Reporting and Analytics:
+Incorporate advanced reporting tools and real-time analytics dashboards that provide actionable insights.
+Workflow Automation:
+Implement automated processes for routine tasks such as case management, eligibility verification, and benefits administration.
+Interoperability:
+Develop and expose APIs for integration with other state systems and third-party service providers.
+User Management:
+Include robust role-based access control and audit trail functionalities.
+6. VENDOR QUALIFICATIONS
+Vendors must demonstrate:
+
+A minimum of five years’ experience in cloud migrations and legacy system modernization projects, preferably within the public sector.
+Proven expertise in modern software development practices and cloud architecture.
+A clear project management methodology, including risk mitigation and quality assurance processes.
+Strong financial stability and a track record of delivering complex IT projects on time and within budget.
+At least three references from similar projects, including detailed outcomes and contact information.
+7. PROPOSAL SUBMISSION REQUIREMENTS
+Proposals should include the following sections:
+
+Executive Summary:
+
+A concise summary of the proposed approach, highlighting key benefits and a high-level project plan.
+Technical Proposal:
+
+Detailed technical solution addressing each element of the Scope of Work and Technical Requirements.
+Project Timeline:
+
+A realistic project schedule, with key milestones for assessment, migration, testing, and deployment.
+Cost Proposal:
+
+A detailed cost breakdown, including all fees, licensing costs, and any additional charges.
+Team Composition:
+
+An overview of the project team, including qualifications and roles.
+Risk Management Plan:
+
+Identification of potential risks and detailed mitigation strategies.
+Legal and Contractual Terms:
+
+Standard contractual terms, warranties, and service level agreements.
+8. SUBMISSION INSTRUCTIONS
+
+Proposals must be submitted in PDF format.
+All proposals must be received by [insert deadline date and time].
+Submissions should be sent electronically to [insert submission email or portal URL].
+Any questions regarding this RFP should be directed to [insert contact name, email, and phone number] by [insert question deadline].
+Late submissions will not be considered.
+9. EVALUATION CRITERIA
+Proposals will be evaluated based on:
+
+The technical soundness and innovation of the proposed solution.
+Vendor experience, qualifications, and references.
+Clarity and feasibility of the project timeline and risk management plan.
+Cost-effectiveness and transparency in the cost proposal.
+Compliance with technical, functional, and security requirements.
+Quality of post-deployment support and training plans.
+10. TERMS AND CONDITIONS
+
+All proposals will be treated as confidential and used solely for evaluation purposes.
+The State reserves the right to reject any or all proposals, in whole or in part, without prior notice.
+The State may amend or cancel this RFP at any time.
+The successful vendor will enter into a contract with the State for an initial term of [insert term], with the possibility of renewal based on performance.
+11. ADDITIONAL INFORMATION
+
+Vendors may request a site visit to review the current legacy system by submitting a written request.
+Proposals must remain valid for a minimum of 90 days from the submission deadline.
+All submitted proposals may be subject to public disclosure in accordance with state public records laws.
+This RFP reflects the State of Evergreen’s commitment to modernizing its social services infrastructure. We seek innovative solutions that not only meet current needs but also provide a scalable foundation for future advancements. We look forward to reviewing your detailed proposals and partnering with a vendor that can deliver a secure, efficient, and modernized system for the benefit of our citizens.
