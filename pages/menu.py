@@ -61,12 +61,10 @@ def menu(is_uploaded, is_summarized):
     elif is_uploaded == True and is_summarized == False: # Before Requirements uploaded
         st.sidebar.page_link("./Home.py", label = "Return Home")
         st.sidebar.page_link("./pages/1_RFP_Requirements.py", label = "RFI/RFP Requirements")
-        st.sidebar.page_link("./pages/3_Chat.py", label = "RFI/RFP Chat")
 
     elif is_uploaded == True and is_summarized == True: # After requirements uploaded
         st.sidebar.page_link("./Home.py", label = "Return Home")
         st.sidebar.page_link("./pages/1_RFP_Requirements.py", label = "RFI/RFP Requirements")
-        st.sidebar.page_link("./pages/2_Summary.py", label = "RFI/RFP Summary")
-        st.sidebar.page_link("./pages/3_Chat.py", label = "RFI/RFP Chat")
+
 
 
