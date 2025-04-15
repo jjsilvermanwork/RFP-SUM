@@ -1,2 +1,6 @@
 path/to/largefile filter=lfs diff=lfs merge=lfs -text
 <file-path> filter=lfs diff=lfs merge=lfs -text
+.git/objects/pack/pack-a015e7fa665cb1ce866a219aa78e193353b362cf.pack filter=lfs diff=lfs merge=lfs -text
+.git/objects/pack/pack-134759dc0fc1c992971a6bb74cb97bcbd40ad324.pack filter=lfs diff=lfs merge=lfs -text
+venv/lib/python3.12/site-packages/pyarrow/libarrow.so.1900 filter=lfs diff=lfs merge=lfs -text
+.venv/lib/python3.12/site-packages/pyarrow/libarrow.so.1900 filter=lfs diff=lfs merge=lfs -text
