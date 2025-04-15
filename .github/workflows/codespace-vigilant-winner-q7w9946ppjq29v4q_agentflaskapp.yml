@@ -25,11 +25,6 @@ jobs:
         run: |
           python -m venv venv
           source venv/bin/activate
-        shell: bash
-
-      - name: Install dependencies
-        run: |
-          source venv/bin/activate
           pip install -r requirements.txt
         shell: bash
 
@@ -38,15 +33,14 @@ jobs:
       - name: Zip artifact for deployment
         run: |
           zip -r release.zip ./*
+          rm -rf venv
         shell: bash
 
       - name: Upload artifact for deployment jobs
         uses: actions/upload-artifact@v4
         with:
           name: python-app
-          path: |
-            release.zip
-            !venv/
+          path: release.zip
 
   deploy:
     runs-on: ubuntu-latest
@@ -71,4 +65,5 @@ jobs:
           app-name: 'agentflaskapp'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+
 
