@@ -3,7 +3,7 @@ name: Build and deploy Python app to Azure Web App
 on:
   push:
     branches:
-      - main
+      - codespace-vigilant-winner-q7w9946ppjq29v4q
 
 jobs:
   build-and-deploy:
