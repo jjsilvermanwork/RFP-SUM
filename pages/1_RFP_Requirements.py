@@ -114,6 +114,30 @@ if 'retooled_resume' in st.session_state:
     st.markdown('<h3 style="text-align:center;">Retooled Resume</h3>', unsafe_allow_html=True)
     with st.container(border=True):
         st.markdown(st.session_state.retooled_resume)
+# Function to create a DOCX file from text
+def create_docx(text, file_name):
+    # Create a new Document
+    doc = Document()
+    # Add text to the Document
+    doc.add_paragraph(text)
+    # Save the Document to a BytesIO object
+    file_stream = io.BytesIO()
+    doc.save(file_stream)
+    file_stream.seek(0)  # Move the cursor to the start of the stream
+    return file_stream
+
+# Check if 'retooled_resume' exists in session state
+retooled_resume_text = st.session_state.get('retooled_resume', '')
+if retooled_resume_text:
+    # Create a docx file from the retooled resume text
+    docx_file = create_docx(retooled_resume_text, "retooled_resume.docx")
+    # Place the download button outside the form
+    st.download_button(
+        label="Download Retooled Resume",
+        data=docx_file,
+        file_name="retooled_resume.docx",
+        mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    )
 
 # Custom function to add a logo in Streamlit
 def st_logo(image, size="small", link=None, icon_image=None):
