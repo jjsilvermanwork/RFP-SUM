@@ -57,7 +57,7 @@ def generate_rfp_summary_prompt(rfp_document_chunk):
     RFP_SUMMARY_PROMPT_TEMPLATE = load_prompt_file("rfp_summary_prompt.txt")
 
     return RFP_SUMMARY_PROMPT_TEMPLATE.format(
-        rdp_documemt=rfp_document_chunk,
+        rfp_document=rfp_document_chunk,
     )
 
 def generate_question_answering_prompt(original_query_from_chat, context_text):
