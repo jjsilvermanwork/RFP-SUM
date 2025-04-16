@@ -21,6 +21,7 @@ from backend.prompts.prompt_configs import (
     summarize_chunk_prompt,
     generate_resume_retool_prompt  # Import the new function
 )
+from backend.prompts.prompt_configs import generate_resume_retool_prompt
 from backend.azure_resources_connections.documentintelligence_connector import chunk_on_md, pdf_to_md, document_intelligence_client
 from backend.azure_resources_connections.openai_api import generate_resume_retool_prompt, call_openai
 
