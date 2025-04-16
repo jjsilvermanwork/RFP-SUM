@@ -1,6 +1,5 @@
 import os
 
-
 # ----------------------------------------
 # Helper: Load a prompt file from backend/prompts/
 # ----------------------------------------
@@ -55,11 +54,10 @@ def compare_documents_prompt(summary_a, summary_b, refined_requirements):
     )
 
 def generate_rfp_summary_prompt(rfp_document_chunk):
-    COMPARE_DOCS_PROMPT_TEMPLATE = load_prompt_file("rfp_summary_prompt.txt")
+    RFP_SUMMARY_PROMPT_TEMPLATE = load_prompt_file("rfp_summary_prompt.txt")
 
-    return COMPARE_DOCS_PROMPT_TEMPLATE.format(
+    return RFP_SUMMARY_PROMPT_TEMPLATE.format(
         rdp_documemt=rfp_document_chunk,
-
     )
 
 def generate_question_answering_prompt(original_query_from_chat, context_text):
@@ -67,4 +65,15 @@ def generate_question_answering_prompt(original_query_from_chat, context_text):
     return QUESTION_ANSWERING_PROMPT_TEMPLATE.format(
         original_query_from_chat=original_query_from_chat,
         context_text=context_text
+    )
+
+# ----------------------------------------
+# New function to generate the resume retooling prompt
+# ----------------------------------------
+def generate_resume_retool_prompt(resume_document, rfp_summary):
+    RESUME_RETOOL_PROMPT_TEMPLATE = load_prompt_file("resume_retool_prompt.txt")
+
+    return RESUME_RETOOL_PROMPT_TEMPLATE.format(
+        resume_document=resume_document,
+        rfp_summary=rfp_summary
     )
