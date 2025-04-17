@@ -15,37 +15,39 @@ load_dotenv()
 new_style = """
         <style>
         div[data-testid="stToolbar"] {
-        visibility: hidden;
-        height: 0%;
-        position: fixed;
+            visibility: hidden;
+            height: 0%;
+            position: fixed;
         }
         div[data-testid="stDecoration"] {
-        visibility: hidden;
-        height: 0%;
-        position: fixed;
+            visibility: hidden;
+            height: 0%;
+            position: fixed;
         }
         div[data-testid="stStatusWidget"] {
-        visibility: hidden;
-        height: 0%;
-        position: fixed;
+            visibility: hidden;
+            height: 0%;
+            position: fixed;
         }
         MainMenu {
-        visibility: hidden;
-        height: 0%;
+            visibility: hidden;
+            height: 0%;
         }
         header {
-        visibility: hidden;
-        height: 0%;
-        position: fixed;
+            visibility: hidden;
+            height: 0%;
+            position: fixed;
         }
         footer {
-        visibility: hidden;
-        height: 0%;
-        position: fixed;
+            visibility: hidden;
+            height: 0%;
+            position: fixed;
+        }
+        img[data-testid="stImage"] {
+            display: none;
         }
         img[data-testid="stLogo"] {
-        height: 4rem;
-        position: centered
+            display: none;
         }
         .st-pagelink {
             color: #FFFFFF;
@@ -56,9 +58,22 @@ new_style = """
 # Applies the CSS Injection
 st.markdown(new_style, unsafe_allow_html=True)
 
-# Side Navigation Panel
+# Function to add a logo in Streamlit
+def st_logo(image, size="small", link=None, icon_image=None):
+    if size == "small":
+        st.image(image, width=100)
+    elif size == "medium":
+        st.image(image, width=200)
+    elif size == "large":
+        st.image(image, width=300)
+    if link is not None:
+        st.markdown(f"[![Foo]({icon_image})]({link})")
+
+# Load the logo image
 image = Image.open('images/logo3.png')
-st.image(image, width=300)
+
+# Display the logo on the left-hand side
+st.sidebar.image(image, width=300)
 
 # Initialize session state for gen_summary if not already initialized
 flag = st.session_state.get("gen_summary", None)
@@ -91,12 +106,6 @@ st.markdown('<h3 style="text-align:center;">RFP/RFI Summary</h3>', unsafe_allow_
 with st.container(border=True):
     st.markdown(st.session_state.rfp_document["content"].get("summary", "No summary available."))
 
-# Display summarized resume if available in session state
-#if 'resume_summary' in st.session_state:
-#    st.markdown('<h3 style="text-align:center;">Resume Summary</h3>', unsafe_allow_html=True)
-#    with st.container(border=True):
-#        st.markdown(st.session_state.resume_summary)
-
 # Display retooled resume if available in session state
 if 'retooled_resume' in st.session_state:
     st.markdown('<h3 style="text-align:center;">Retooled Resume</h3>', unsafe_allow_html=True)
@@ -127,17 +136,6 @@ if retooled_resume_text:
         file_name="retooled_resume.docx",
         mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
     )
-
-# Custom function to add a logo in Streamlit
-def st_logo(image, size="small", link=None, icon_image=None):
-    if size == "small":
-        st.image(image, width=100)
-    elif size == "medium":
-        st.image(image, width=200)
-    elif size == "large":
-        st.image(image, width=300)
-    if link is not None:
-        st.markdown(f"[![Foo]({icon_image})]({link})")
 
 # Placeholder for the `menu` function which should be defined in `pages/menu.py`
 def menu(show_rfp, show_summary):
