@@ -409,7 +409,7 @@ def process_resume_retooling(resume_content, rfp_summary, session_dir):
     logger.info("Starting resume retooling process.")
 
     # Path to the resume retooler prompt template
-    template_path = '/workspaces/RFP-SUM/backend/prompts/resume_retool_prompt.txt'
+    template_path = 'backend/prompts/resume_retool_prompt.txt'
 
     # Generate the resume retooling prompt.
     logger.info("Generating resume retooling prompt.")
