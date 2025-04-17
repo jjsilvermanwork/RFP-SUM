@@ -86,61 +86,79 @@ def summarize_resume(resume_content):
 
 def create_docx_from_text(text, filename="Retooled_Resume.docx"):
     doc = Document()
-
-    # Parse the text using BeautifulSoup to handle HTML tags
-    soup = BeautifulSoup(text, 'html.parser')
-
-    # Iterate over all elements in the parsed HTML
-    for element in soup.recursiveChildGenerator():
-        if element.name:
-            if element.name == 'h1':
-                # Add H1 as a large bold title
+    
+    # Split the text into sections
+    sections = text.split('\n\n')
+    for section in sections:
+        if section.startswith('Header'):
+            # Add Header
+            header_lines = section.split('\n')
+            for line in header_lines[1:]:
                 paragraph = doc.add_paragraph()
-                run = paragraph.add_run(element.get_text())
-                run.font.size = Pt(20)
-                run.font.bold = True
-                run.font.name = 'Arial'
-                paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
-            elif element.name == 'h2':
-                # Add H2 as a bold section title
-                paragraph = doc.add_paragraph()
-                run = paragraph.add_run(element.get_text())
-                run.font.size = Pt(16)
-                run.font.bold = True
-                run.font.name = 'Arial'
-            elif element.name == 'h3':
-                # Add H3 as a bold subsection title
-                paragraph = doc.add_paragraph()
-                run = paragraph.add_run(element.get_text())
+                run = paragraph.add_run(line)
                 run.font.size = Pt(14)
                 run.font.bold = True
                 run.font.name = 'Arial'
-            elif element.name == 'p':
-                # Add paragraphs
-                paragraph = doc.add_paragraph(element.get_text())
-                paragraph.paragraph_format.space_after = Pt(12)
-                run = paragraph.runs[0]
-                run.font.size = Pt(12)
-                run.font.name = 'Arial'
-            elif element.name == 'ul':
-                # Handle unordered list
-                for li in element.find_all('li'):
-                    paragraph = doc.add_paragraph(style='List Bullet')
-                    run = paragraph.add_run(li.get_text())
-                    run.font.size = Pt(12)
-                    run.font.name = 'Arial'
-            elif element.name == 'strong':
-                # Handle strong (bold) text
+        elif section.startswith('Professional Biography'):
+            # Add Professional Biography
+            paragraph = doc.add_paragraph()
+            run = paragraph.add_run('Professional Biography')
+            run.font.size = Pt(14)
+            run.font.bold = True
+            run.font.name = 'Arial'
+            run.font.underline = True
+            bio_lines = section.split('\n')[1:]
+            for line in bio_lines:
                 paragraph = doc.add_paragraph()
-                run = paragraph.add_run(element.get_text())
+                run = paragraph.add_run(line)
                 run.font.size = Pt(12)
-                run.font.bold = True
                 run.font.name = 'Arial'
-        elif element.string:
-            # Handle plain text outside of tags
-            paragraph = doc.add_paragraph(element.string)
-            paragraph.paragraph_format.space_after = Pt(12)
-            run = paragraph.runs[0]
+        elif section.startswith('Skills Summary'):
+            # Add Skills Summary
+            paragraph = doc.add_paragraph()
+            run = paragraph.add_run('Skills Summary')
+            run.font.size = Pt(14)
+            run.font.bold = True
+            run.font.name = 'Arial'
+            run.font.underline = True
+            skills_lines = section.split('\n')[1:]
+            for line in skills_lines:
+                paragraph = doc.add_paragraph()
+                run = paragraph.add_run(line)
+                run.font.size = Pt(12)
+                run.font.name = 'Arial'
+        elif section.startswith('Highlights'):
+            # Add Highlights
+            paragraph = doc.add_paragraph()
+            run = paragraph.add_run('Highlights')
+            run.font.size = Pt(14)
+            run.font.bold = True
+            run.font.name = 'Arial'
+            run.font.underline = True
+            highlights_lines = section.split('\n')[1:]
+            for line in highlights_lines:
+                paragraph = doc.add_paragraph()
+                run = paragraph.add_run(line)
+                run.font.size = Pt(12)
+                run.font.name = 'Arial'
+        elif section.startswith('Key Experiences'):
+            # Add Key Experiences
+            paragraph = doc.add_paragraph()
+            run = paragraph.add_run('Key Experiences')
+            run.font.size = Pt(14)
+            run.font.bold = True
+            run.font.name = 'Arial'
+            run.font.underline = True
+            experiences_lines = section.split('\n')[1:]
+            for line in experiences_lines:
+                paragraph = doc.add_paragraph()
+                run = paragraph.add_run(line)
+                run.font.size = Pt(12)
+                run.font.name = 'Arial'
+        else:
+            # Add any other sections
+            paragraph = doc.add_paragraph()
+            run = paragraph.add_run(section)
             run.font.size = Pt(12)
             run.font.name = 'Arial'
 
