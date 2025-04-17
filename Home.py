@@ -131,8 +131,7 @@ def create_docx_from_text(text, filename="Retooled_Resume.docx"):
                     run.font.name = 'Arial'
             elif element.name == 'strong':
                 # Handle strong (bold) text
-                paragraph = doc.add_paragraph()
-                run = paragraph.add_run(element.get_text())
+                run = doc.add_paragraph().add_run(element.get_text())
                 run.font.size = Pt(12)
                 run.font.bold = True
                 run.font.name = 'Arial'
