@@ -17,6 +17,7 @@ from docx.shared import Pt
 from dotenv import load_dotenv
 from docx.enum.text import WD_PARAGRAPH_ALIGNMENT
 from bs4 import BeautifulSoup
+import base64
 
 # Load environment variables from .env file
 load_dotenv()
@@ -82,8 +83,6 @@ def summarize_resume(resume_content):
         logging.error("Unexpected response format.")
         return "Unexpected response format."
 
-
-
 def create_docx_from_text(text, filename="Retooled_Resume.docx"):
     doc = Document()
 
@@ -146,17 +145,28 @@ def create_docx_from_text(text, filename="Retooled_Resume.docx"):
     buffer.seek(0)
     return buffer
 
-
 # Custom function to add a logo in Streamlit
-def st_logo(image, size="small", link=None, icon_image=None):
+def st_logo(image_base64, size="small", link=None, icon_image=None):
     if size == "small":
-        st.image(image, width=100)
+        width = 100
     elif size == "medium":
-        st.image(image, width=200)
+        width = 200
     elif size == "large":
-        st.image(image, width=300)
-    if link is not None:
-        st.markdown(f"[![Foo]({icon_image})]({link})")
+        width = 300
+
+    # Create an HTML block to center the image
+    logo_html = f"""
+<div style="display: flex; justify-content: center;">
+    <img src="data:image/png;base64,{image_base64}" width="{width}">
+</div>
+""
+
+    st.markdown(logo_html, unsafe_allow_html=True)
+
+# Function to convert the image to base64
+def image_to_base64(image_path):
+    with open(image_path, "rb") as image_file:
+        return base64.b64encode(image_file.read()).decode("utf-8")
 
 # Placeholder for the `menu` function which should be defined in `pages/menu.py`
 def menu(show_rfp, show_summary):
@@ -203,9 +213,7 @@ new_style = """
             height: 0%;
         }
         img[data-testid="stLogo"] {
-            height: 4rem;
-            position: absolute;
-            left: 0;
+            display: none;
         }
         .st-pagelink {
             color: #FFFFFF;
@@ -216,9 +224,12 @@ new_style = """
 # Applies the CSS Injection
 st.markdown(new_style, unsafe_allow_html=True)
 
-# Loads a logo from file and applies it
-image = Image.open('images/logo3.png')
-st_logo(image, size="large", link=None, icon_image=None)
+# Load the logo image and convert it to base64
+image_path = 'images/logo3.png'
+image_base64 = image_to_base64(image_path)
+
+# Use the modified st_logo function
+st_logo(image_base64, size="large")
 
 # Calls menu with values passed to determine what
 menu(False, False)
@@ -277,6 +288,7 @@ with st.form('file_selection'):
 # Run the application
 if __name__ == '__main__':
     pass
+
 
 
 
