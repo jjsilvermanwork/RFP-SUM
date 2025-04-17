@@ -159,7 +159,7 @@ def st_logo(image_base64, size="small", link=None, icon_image=None):
 <div style="display: flex; justify-content: center;">
     <img src="data:image/png;base64,{image_base64}" width="{width}">
 </div>
-""
+"""
 
     st.markdown(logo_html, unsafe_allow_html=True)
 
