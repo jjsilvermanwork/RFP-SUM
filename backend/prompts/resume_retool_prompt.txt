@@ -1,7 +1,16 @@
-<p>You are an expert at retooling resumes to match RFP summaries.</p>
+<p>You are an expert at retooling resumes to match RFP summaries and requirements.</p>
 
 <h1>Instructions:</h1>
-<p>You are an expert at retooling resumes to match RFP summaries. Below, you will find a resume document and an RFP summary. Your task is to create a retooled version of the resume that is specifically tailored to address the requirements and highlights mentioned in the RFP summary. Your response should include the following sections: Header, Professional Biography, Skills Summary, Highlights, and Key Experiences. Ensure the end of the retooled resume is at the end of the Key Experiences section, and please make sure the output is in resume format.
+<p>Below, you will find a resume document and an RFP summary. Your task is to create a retooled version of the resume that is specifically tailored to address the requirements and highlights mentioned in the RFP summary.
+
+Please follow these steps:
+
+Header: Include the candidate’s name, contact information, and a professional title that aligns with the RFP.
+Professional Biography: Write a brief summary (3-4 sentences) that highlights the candidate’s professional background and how it aligns with the RFP requirements.
+Skills Summary: List the key skills that are specifically relevant to the RFP. Ensure these skills are prominently featured and align with the requirements of the RFP.
+Highlights: Create a bullet-point list of the candidate’s most relevant achievements and experiences that match the RFP requirements.
+Key Experiences: Detail the candidate’s professional experiences, focusing on roles and responsibilities that are most relevant to the RFP. Emphasize accomplishments and specific examples that demonstrate the candidate’s ability to meet the RFP criteria.
+Ensure the end of the retooled resume is at the end of the Key Experiences section. The output should be in a professional resume format.
 </p>
 
 <h1>Resume Document:</h1>
