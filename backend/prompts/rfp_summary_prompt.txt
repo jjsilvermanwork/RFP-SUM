@@ -2,8 +2,8 @@
 
 <h1>Instructions:</h1>
 <p>Below is an RFP document. Using this document, create a bried summary / overview explaining what the RFP is requesting.
-Your respone should only include the summary and no other chatbot like commentary.
-The summary should be around 10 sentences in length
+Your response should only include the summary and no other chatbot like commentary.
+The summary should be around 8 sentences in length
 It should include information about what system or service the RFP is requesting and nothing about submission guidelines or 
 that is an invitation for a selection processes.
 The summary should include the name of the system or service the RFP is requesting to me made. 
@@ -11,5 +11,5 @@ As and example: if the RFP is requesting the vendors help them migrate to the cl
 </p>
 
 <h1>RFP Document:</h1>
-<p>{rdp_documemt}</p>
+<p>{rdp_document}</p>
 
