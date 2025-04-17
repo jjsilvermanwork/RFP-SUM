@@ -238,7 +238,7 @@ st.markdown(new_style, unsafe_allow_html=True)
 
 # Loads a logo from file and applies it
 image = Image.open('images/logo3.png')
-st_logo(image, size="large", link=None, icon_image=None)
+st_logo(image, size="small", link=None, icon_image=None)
 
 # Calls menu with values passed to determine what
 menu(False, False)
