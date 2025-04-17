@@ -48,8 +48,7 @@ new_style = """
         height: 0%;
         }
         img[data-testid="stLogo"] {
-        height: 4rem;
-        position: centered
+        display: none
         }
         .st-pagelink {
             color: #FFFFFF;
@@ -61,8 +60,8 @@ new_style = """
 st.markdown(new_style, unsafe_allow_html=True)
 
 # Loads a logo from file and applies it
-image = Image.open('images/logo3.png')
-st.logo(image, size="large", link=None, icon_image=None)
+#image = Image.open('images/logo3.png')
+#st.logo(image, size="large", link=None, icon_image=None)
 
 # Calls menu with values passed to determine what
 menu(False, False)
