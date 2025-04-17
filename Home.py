@@ -90,58 +90,56 @@ def create_docx_from_text(text, filename="Retooled_Resume.docx"):
     # Parse the text using BeautifulSoup to handle HTML tags
     soup = BeautifulSoup(text, 'html.parser')
 
-    # Iterate over all elements in the parsed HTML
-    for element in soup.recursiveChildGenerator():
-        if element.name:
-            if element.name == 'h1':
-                # Add H1 as a large bold title
-                paragraph = doc.add_paragraph()
-                run = paragraph.add_run(element.get_text())
-                run.font.size = Pt(20)
-                run.font.bold = True
-                run.font.name = 'Arial'
-                paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
-            elif element.name == 'h2':
-                # Add H2 as a bold section title
-                paragraph = doc.add_paragraph()
-                run = paragraph.add_run(element.get_text())
-                run.font.size = Pt(16)
-                run.font.bold = True
-                run.font.name = 'Arial'
-            elif element.name == 'h3':
-                # Add H3 as a bold subsection title
-                paragraph = doc.add_paragraph()
-                run = paragraph.add_run(element.get_text())
-                run.font.size = Pt(14)
-                run.font.bold = True
-                run.font.name = 'Arial'
-            elif element.name == 'p':
-                # Add paragraphs
-                paragraph = doc.add_paragraph(element.get_text())
-                paragraph.paragraph_format.space_after = Pt(12)
-                run = paragraph.runs[0]
+    def add_element_to_doc(element):
+        if element.name == 'h1':
+            paragraph = doc.add_paragraph()
+            run = paragraph.add_run(element.get_text())
+            run.font.size = Pt(20)
+            run.font.bold = True
+            run.font.name = 'Arial'
+            paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
+        elif element.name == 'h2':
+            paragraph = doc.add_paragraph()
+            run = paragraph.add_run(element.get_text())
+            run.font.size = Pt(16)
+            run.font.bold = True
+            run.font.name = 'Arial'
+        elif element.name == 'h3':
+            paragraph = doc.add_paragraph()
+            run = paragraph.add_run(element.get_text())
+            run.font.size = Pt(14)
+            run.font.bold = True
+            run.font.name = 'Arial'
+        elif element.name == 'p':
+            paragraph = doc.add_paragraph(element.get_text())
+            paragraph.paragraph_format.space_after = Pt(12)
+            run = paragraph.runs[0]
+            run.font.size = Pt(12)
+            run.font.name = 'Arial'
+        elif element.name == 'ul':
+            for li in element.find_all('li'):
+                paragraph = doc.add_paragraph(style='List Bullet')
+                run = paragraph.add_run(li.get_text())
                 run.font.size = Pt(12)
                 run.font.name = 'Arial'
-            elif element.name == 'ul':
-                # Handle unordered list
-                for li in element.find_all('li'):
-                    paragraph = doc.add_paragraph(style='List Bullet')
-                    run = paragraph.add_run(li.get_text())
-                    run.font.size = Pt(12)
-                    run.font.name = 'Arial'
-            elif element.name == 'strong':
-                # Handle strong (bold) text
-                run = doc.add_paragraph().add_run(element.get_text())
-                run.font.size = Pt(12)
-                run.font.bold = True
-                run.font.name = 'Arial'
+        elif element.name == 'strong':
+            run = doc.add_paragraph().add_run(element.get_text())
+            run.font.size = Pt(12)
+            run.font.bold = True
+            run.font.name = 'Arial'
         elif element.string:
-            # Handle plain text outside of tags
             paragraph = doc.add_paragraph(element.string)
             paragraph.paragraph_format.space_after = Pt(12)
             run = paragraph.runs[0]
             run.font.size = Pt(12)
             run.font.name = 'Arial'
+
+    # Iterate over all elements in the parsed HTML
+    for element in soup.recursiveChildGenerator():
+        if hasattr(element, 'name'):
+            add_element_to_doc(element)
+        elif hasattr(element, 'string') and element.string.strip():
+            add_element_to_doc(element)
 
     buffer = io.BytesIO()
     doc.save(buffer)
