@@ -87,7 +87,7 @@ else:
     menu(True, False)
 
 title_alignment = """
-<h1 style="font-size: 42px; text-align: center;">RFP Summary and Retooled Resume</h1>
+<h1 style="font-size: 42px; text-align: center;">RFI/RFP Summary and Retooled Resume</h1>
 """
 st.markdown(title_alignment, unsafe_allow_html=True)
 
@@ -102,7 +102,7 @@ if 'reqs_selected' not in st.session_state:
     st.session_state.reqs_selected = []
 
 # Display RFP Summary
-st.markdown('<h3 style="text-align:center;">RFP/RFI Summary</h3>', unsafe_allow_html=True)
+st.markdown('<h3 style="text-align:center;">RFI/RFP Summary</h3>', unsafe_allow_html=True)
 with st.container(border=True):
     st.markdown(st.session_state.rfp_document["content"].get("summary", "No summary available."))
 
