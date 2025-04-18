@@ -11,5 +11,5 @@ As and example: if the RFP is requesting the vendors help them migrate to the cl
 </p>
 
 <h1>RFP Document:</h1>
-<p>{rdp_documemt}</p>
+<p>{rdp_document}</p>
 

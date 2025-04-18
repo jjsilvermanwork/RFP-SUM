@@ -4,7 +4,7 @@ import time
 from streamlit_pdf_viewer import pdf_viewer
 from PIL import Image
 from backend.ingestion_utils import logger, process_rfp_responses # needs to be commented out
-from pages.menu import menu
+from menu import menu
 
 # Custom CSS for sidebar and page background
 new_style = """
@@ -197,7 +197,7 @@ except Exception as e:
     print(len(st.session_state.rfp_response_documents))
     st.session_state.retry_loading = True
     process_rfp_responses(st)
-    st.switch_page("pages/2_Summary.py")
+    st.switch_page("pages/Summary.py")
 
 with st.columns([9, 1])[1]:
     summarize = st.button("Chat", key=f'chat_with_all')
@@ -220,4 +220,4 @@ with st.columns([9, 1])[1]:
             # st.success("Flag is now TRUE")
         # st.write("Flag Value: ", st.session_state.gen_summary)
         progress_bar()
-        st.switch_page("pages/3_Chat.py")
+        st.switch_page("pages/Chat.py")
