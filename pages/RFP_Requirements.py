@@ -3,7 +3,7 @@ import time
 import pandas as pd
 import streamlit as st
 from PIL import Image
-from pages.menu import menu
+from menu import menu
 from backend.ingestion_utils import process_rfp_responses
 
 # Custom CSS for sidebar and page background
@@ -226,6 +226,6 @@ with st.columns([5.25, 1])[1]:
             st.session_state.gen_summary = True
             st.success("Flag is now TRUE")
         st.write("Flag Value: ", st.session_state.gen_summary)
-        st.switch_page("pages/2_Summary.py")
+        st.switch_page("pages/Summary.py")
 
 
